@@ -1,0 +1,219 @@
+
+:root{
+    --base_headerMain : #0C1116;
+    --base_headerMain2 : #080b0e;
+    --base_bodyMain : #171A22;
+    --base_bodyMain2 : #11131a;
+    --base_defaultTextColor : white;
+    --base_bodyMainShadow : #06090c;
+
+    --Body_Width: calc(1920px * 0.6);
+    --AccentColour : #3576FE;
+}
+
+.light{
+    animation: transitionIn .5s linear;
+
+    --headerMain : #EEEEEE;
+    --headerMain2 : #dbdbdb;
+    --bodyMain : rgb(255, 255, 255);
+    --bodyMain2 : rgb(224, 224, 224);
+    --defaultTextColor : rgb(0, 0, 0);
+    --bodyMainShadow : rgb(165, 165, 165);
+}
+
+.dark{
+    animation: transitionIn .5s linear;
+
+    --headerMain : var(--base_headerMain);
+    --headerMain2 : var(--base_headerMain2);
+    --bodyMain : var(--base_bodyMain);
+    --bodyMain2 : var(--base_bodyMain2);
+    --defaultTextColor : var(--base_defaultTextColor);
+    --bodyMainShadow : var(--base_bodyMainShadow);
+}
+
+
+
+
+
+
+body{
+    background: linear-gradient(45deg, var(--bodyMain2) 0%, var(--bodyMain) 100%);
+}
+
+#GameContainer::-webkit-scrollbar {
+    display: none;
+}
+
+div#GameContainer{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+    width: 100%;
+    height: calc(100vh - 4em);
+    position: absolute;
+    overflow-y: scroll;
+
+    top: 4em;
+
+    scroll-snap-type: y mandatory;
+}
+
+.Game{
+    scroll-snap-align: start;
+
+    position: relative;
+
+    height: calc(100vh - 4em);
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+div.GameHolder{
+    position: relative;
+    bottom: 5em;
+    
+    width: calc(1920px * .6);
+    min-width: calc(1920px * .6);
+    height: 30em;
+
+    z-index: 1;
+}
+
+img.GameHolder{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+div.GameHolderOverlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .9;
+}
+
+
+a.TitleHolder{
+    font-size: 20px;
+}
+
+div.TitleHolder{
+    height: 5em;
+    
+    background-color: var(--headerMain);
+    border-radius: 25px;
+    
+    box-shadow: var(--bodyMainShadow) 5px 5px 15px 0px;
+    
+    display: flex;
+    align-items: center;
+    padding-left: 2em;
+}
+
+div.InfoHolder{
+    height: 23em;
+    margin-top: 2em;
+
+    background-color: var(--headerMain);
+    border-radius: 25px;
+
+    box-shadow: var(--bodyMainShadow) 5px 5px 15px 0px;
+
+    display: flex;
+    align-items: center;
+}
+
+iframe.InfoVideo{
+    position: relative;
+
+    border-radius: 25px;
+    margin-left: 1.4em;
+    width: 35em;
+
+    box-shadow: var(--bodyMainShadow) 0px 0px 25px 0px;
+
+    transition: box-shadow .2s;
+}
+
+iframe.InfoVideo:hover{
+    box-shadow: var(--AccentColour) 0px 0px 25px 0px;
+}
+
+img.InfoVideo{
+    position: relative;
+
+    border-radius: 25px;
+    margin-left: 1.4em;
+    width: 35em;
+
+    box-shadow: var(--bodyMainShadow) 0px 0px 25px 0px;
+
+    transition: box-shadow .2s;
+}
+
+div.InfoText{
+    max-width: 35em;
+    height: 90%;
+    margin-left: 2em;
+
+    display: inline-block;
+}
+
+input.InfoText{
+    position: absolute;
+
+    top: 38em;
+    right: 1em;
+
+    height: 3em;
+    width: 20em;
+    z-index: 10;
+    
+    background-color: var(--headerMain);
+    color: var(--defaultTextColor);
+
+    border-radius: 25px;    
+	border: 3px solid var(--AccentColour);
+    box-shadow: var(--bodyMainShadow) 0px 0px 25px 0px;
+
+    transition: all .2s linear;
+    cursor: pointer;
+}
+
+input.InfoText:hover{
+    background-color: var(--AccentColour);
+    transform: scale(1.1);
+}
+
+a.GameHolderHint{
+    position: absolute;
+    justify-self: end;
+
+    top: 23em;
+    font-size: 35px;
+    z-index: 5;
+
+    color: var(--AccentColour);
+
+    animation: moveHint 5s ease-in-out infinite;
+}
+
+@keyframes moveHint{
+    10%{
+        transform: translate(0);
+        opacity: 1;
+    }
+
+    50%{
+        transform: translateY(100px); 
+        opacity: 0;
+    }
+}

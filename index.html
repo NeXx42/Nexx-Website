@@ -1,24 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>NeXx42</title>
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-        <link rel = "stylesheet" type = "text/css" href = "StyleSheet.css">
-        <link rel="icon" href="Resources/Profile.png">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <script>
-            function openLink(to){
-                switch(to){
-                    case "store-polydefence":
-                        window.open("https://play.google.com/store/apps/details?id=com.Polynexx.PolyDefence", "_blank");
-                        break;
+        <link href="https://css.gg/css?=|dark-mode" rel="stylesheet">
 
-                    case "page-vrfps":
-                        window.location.href = "Blogs/FPSBlog.html";
-                        break;
-                }
-            }
-        </script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+        <link href="StyleSheet.css" rel="StyleSheet" type="text/css">
+
+        <script src = "Javascript.js" type = "text/javascript"></script>
+        <script src = "./Resources/ContentLoader.js" type = "text/javascript"></script>
+        <script src = "./Resources/SiteContent.js" type = "text/javascript"></script>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-R3EZ5P6T62"></script>
@@ -29,44 +25,74 @@
 
             gtag('config', 'G-R3EZ5P6T62');
         </script>
+
+        <link rel="icon" href="./Resources/Profile.png">
+        <title>Home</title>
     </head>
-    <body>
 
-        <div class="Links">
-            <ul>
-                <li><a href="https://github.com/NeXx42"target="_blank">Github</a></li>
-                <li><a href="https://twitter.com/Nexx42tv"target="_blank">Twitter</a></li>
-                <li ><a href="https://www.youtube.com/channel/UCvHiG9ZnD5xXVgLH3eRAClg"target="_blank">Youtube</a></li>
-                <li ><a href="https://www.twitch.tv/nexx42tv"target="_blank">Twitch</a></li>
-                <li ><a href="https://play.google.com/store/apps/developer?id=Polynexx"target="_blank">Google Play</a></li>
-            </ul>
+    <body class="dark">
+        <div class="TopBar">
+            <div class="TopBarContainer">
+                <ul class="TopBarItem">
+                    <li class="TopBarItem"><a class="TopBarItem" href="./index.html" style="color: var(--AccentColour);">Home</a></li>
+                    <li class="TopBarItem"><a class="TopBarItem" href="./Pages/projects.html">Projects</a></li>
+                    <li class="TopBarItem"><a class="TopBarItem" href="./Pages/games.html">Games</a></li>
+                </ul>
+                
+                <i class="gg-dark-mode"><input class="TopBarItem"  type="button" onclick="ChangeTheme(0)"></i>
+            </div>
         </div>
-        <div class="TopHeader">
-            <h1 class="TopHeader">NEXX42</h1>
+
+        <div Class="MainContainer">
+            <div class="ProfileContainer">
+                <div class="ProfileHolder">
+                    <img class="ProfileHolder" src="./Resources/Profile.png">
+                    <a class="ProfileHolder">Nexx42</a>
+                </div>
+
+                <div class="ProfileLatestContainer">
+                    <a class="ProfileLatest">Latest</a>
+                    <div class="ProfileLatest">
+
+                        <div class="ProfileLatestText">
+                            <a class="ProfileLatestText">
+                                My latest youtube video!
+                            </a>
+
+                            <input type="button" value="Visit" class="ProfileLatestText" onclick="window.open('https://www.youtube.com/watch?v=Yyer2_OreT4&t=2s','_blank')">
+                        </div>
+
+                        <iframe class="ProfileLatest" width="392" height="220" 
+                            src="https://www.youtube-nocookie.com/embed/Yyer2_OreT4" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="Links">
+                <a class="Links">Links</a>
+
+                <div id="LinkMainContainer">
+
+
+                </div>
+            </div>
         </div>
 
-        <ol>
-            <div class="Lastest">
-                <img src="Resources/Screenshot3.png" width="1920" height="1080"></img>
-                <div id="Lastest-Text">
-                    <div>
-                        <h1> POLYDEFENCE</h1>
-                        <a>The first game i have released.<br>A low poly styled tower defence game<br></a>
-                    </div>
-                    <button type="button" onclick="openLink('store-polydefence')">View On Store</button>
-                </div>
-            </div>      
+        <div class="Footer">
 
-            <div class="Lastest">
-                <img src="Resources/VR-FPS/1.jpg" width="1920" height="1080"></img>
-                <div id="Lastest-Text">
-                    <div>
-                        <h1> vr survival game</h1>
-                        <a>A vr only survival game i am currently working on<br></a>
-                    </div>
-                    <button type="button" onclick="openLink('page-vrfps')">More Info</button>
-                </div>
-            </div>  
-        </ol>
+        </div>
     </body>
+
+    <footer>
+        <script>
+            GenerateLinks();
+            LoadTheme();
+        </script>
+    </footer>
 </html>
