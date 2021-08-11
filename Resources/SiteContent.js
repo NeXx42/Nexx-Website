@@ -2,8 +2,8 @@ const links = [
     {"colour":"#1DBF73", "name":"fiverr", "link":"https://www.fiverr.com/nexx_42"},
     {"colour":"white", "name":"playstore", "link":"https://play.google.com/store/apps/developer?id=Polynexx"},
     {"colour":"#FE0100", "name":"youtube", "link":"https://www.youtube.com/channel/UCvHiG9ZnD5xXVgLH3eRAClg"},
-    {"colour":"#1A98E5", "name":"Twitter", "link":"https://twitter.com/Nexx42tv"},
-    {"colour":"#9046FF", "name":"twitch", "link":"https://www.twitch.tv/nexx42"},
+    {"colour":"#1A98E5", "name":"Twitter", "link":"https://twitter.com/nexx42_"},
+    {"colour":"#9046FF", "name":"twitch", "link":"https://www.twitch.tv/nexx42_"},
     {"colour":"white", "name":"github", "link":"https://github.com/NeXx42"},
 ];
 
