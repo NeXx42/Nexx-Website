@@ -1,4 +1,4 @@
-let curTheme = 1; 
+let curTheme = 0; 
 
 function ChangeTheme(){
   curTheme = curTheme == 0 ? 1 : 0;
