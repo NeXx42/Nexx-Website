@@ -22,11 +22,18 @@ const PageContent =
         "content":
         [
             {
+                "name":"Early work on item durability / recycling",
+                "text":"A showcase of some early work on item durability, repairing, and recycling.",
+                "image":"VR-FPS/itemdurabilitybg.png",
+                "video":"X5Ty74YJLCk",
+                "link":"https://www.youtube.com/watch?v=X5Ty74YJLCk", 
+            },
+            {
                 "name":"Raiding Randomly Spawning Bases",
                 "text":"A showcase of randomly spawning bases, and the ability to raid them for loot.",
                 "image":"VR-FPS/raidingrandombases.png",
                 "video":"Yyer2_OreT4",
-                "link":"https://www.youtube.com/watch?v=Yyer2_OreT4",
+                "link":"https://www.youtube.com/watch?v=Yyer2_OreT4", 
             },
             {
                 "name":"Modular Attachments",
