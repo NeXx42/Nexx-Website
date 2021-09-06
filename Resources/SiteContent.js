@@ -24,7 +24,7 @@ const PageContent =
             {
                 "name":"Early work on item durability / recycling",
                 "text":"A showcase of some early work on item durability, repairing, and recycling.",
-                "image":"VR-FPS/itemdurabilitybg.png",
+                "image":"VR-FPS/itemdurbg.png",
                 "video":"X5Ty74YJLCk",
                 "link":"https://www.youtube.com/watch?v=X5Ty74YJLCk", 
             },
