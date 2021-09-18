@@ -22,6 +22,13 @@ const PageContent =
         "content":
         [
             {
+                "name":"Hunting",
+                "text":"A showcase of some early work on Hunting and animal AI.",
+                "image":"VR-FPS/HuntingBG",
+                "video":"szovCEVkpQQ",
+                "link":"https://www.youtube.com/watch?v=szovCEVkpQQ", 
+            },
+            {
                 "name":"Early work on item durability / recycling",
                 "text":"A showcase of some early work on item durability, repairing, and recycling.",
                 "image":"VR-FPS/itemdurbg.png",
