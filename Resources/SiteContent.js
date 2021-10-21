@@ -24,7 +24,7 @@ const PageContent =
             {
                 "name":"Hunting",
                 "text":"A showcase of some early work on Hunting and animal AI.",
-                "image":"VR-FPS/HuntingBG",
+                "image":"VR-FPS/HuntingBG.png",
                 "video":"szovCEVkpQQ",
                 "link":"https://www.youtube.com/watch?v=szovCEVkpQQ", 
             },
