@@ -19,6 +19,15 @@ const PageContent =
         "text":"A project im currently working on which is a survival game based in vr.",
         "link":"",
 
+        "gallary":
+        [
+            "VR-FPS/ShowcasePics/Screenshot5.png",
+            "VR-FPS/ShowcasePics/Untitled.png",
+            "VR-FPS/ShowcasePics/Screenshot2.png",
+            "VR-FPS/ShowcasePics/Screenshot3.png",
+            "VR-FPS/ShowcasePics/Screenshot4.png",
+        ],
+
         "content":
         [
             {
@@ -89,6 +98,15 @@ const PageContent =
 
     {
         "type":"games", 
+        "name":"Polycrawler : Dungeon Crawler",
+        "image":"PolyCrawler_BG.png",
+        "video":"",
+        "background":"PolyCrawler_BG.png",
+        "link":"https://play.google.com/store/apps/details?id=com.Polynexx.PolycrawlerDungeonCrawler",
+        "text":"A low poly turn based dungeon crawler, set in a fantasy world where you fight hoards of enemies until you either perish or reach the end.",
+    },
+    {
+        "type":"games", 
         "name":"Poly Defence",
         "image":"Screenshot3.png",
         "video":"",
@@ -96,18 +114,124 @@ const PageContent =
         "link":"https://play.google.com/store/apps/details?id=com.Polynexx.PolyDefence",
         "text":"The first game i have released.<br>A low poly styled tower defence game",
     },
-    {
-        "type":"games", 
-        "name":"Polycrawler : Dungeon Crawler",
-        "image":"PolyCrawler_BG.png",
-        "video":"",
-        "background":"unnamed.webp",
-        "link":"https://play.google.com/store/apps/details?id=com.Polynexx.PolycrawlerDungeonCrawler",
-        "text":"A low poly turn based dungeon crawler, set in a fantasy world where you fight hoards of enemies until you either perish or reach the end.",
-    },
 ];
 
 
 
 function GetLinks() { return links }; 
 function GetSiteContent() { return PageContent }; 
+
+function GetLinksHTML(element, points, points2){
+    return`
+        <div class="LinkContainer">
+            <div class="LinkContainerTop">
+                <a class="LinkContainerTop" style="color: ${element["colour"]};">${element["name"]}</a>
+            </div>
+
+            <div class="LinkContainerBot" 
+                style="clip-path: polygon(0% ${points[0]}%, 20% ${points[1]}%, 70% ${points[2]}%, 100% ${points[3]}%, 100% 100%, 0% 100%); 
+                        background-color:${element['colour']};">
+            </div>
+
+            <div class="LinkContainerBot2" style="clip-path: polygon(0% ${points2[0]}%, 20% ${points2[1]}%, 70% ${points2[2]}%, 100% ${points2[3]}%, 100% 100%, 0% 100%);">
+            </div>
+            <input type="button" class="LinkContainerBot" onclick="window.open('${element["link"]}','_blank')" value="Visit">
+        </div>
+    `
+}
+
+function GetMainHTML(element, link, buttonText){
+    return `
+        <section class="Game">
+            <img class="GameHolder" src="../Resources/${element["background"]}" alt="">
+            <div class="GameHolderOverlay"></div>
+
+            <div class="GameHolder">
+                
+                <div class="TitleHolder">
+                    <a class="TitleHolder">${element["name"]}</a>
+                </div>
+
+                <div class="InfoHolder">               
+                    <iframe style="${element["image"] == "" ? "" : "display:none;"}" class="InfoVideo" width="588" height="330" 
+                        src="https://www.youtube-nocookie.com/embed/${element["video"]}" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="clipboard-write; encrypted-media; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                    <img class="InfoVideo" src="../Resources/${element["image"]}"  alt="" style="${element["image"] == "" ? "display:none;" : ""}" width="588" height="330">
+
+                    <div class="InfoText">
+                        <a class="InfoText">
+                            ${element["text"]}
+                        </a>
+
+                        <input type="button" value="${buttonText}" class="InfoText" onclick="${link}",'_blank')">
+                    </div>
+                </div>
+            </div>
+        </section>  
+    `
+}
+
+function GetSubHTML(content){
+    let pics = ""
+    content["gallary"].forEach(element => {
+        pics += `<img class="Sub_Menu_Container_Content_Media" src="../Resources/${element}" alt="">`
+    });
+
+
+    return `
+        <section class="Sub_Menu_Section">
+            <img class="GameHolder" src="../Resources/${content["background"]}" alt="">
+            <div class="GameHolderOverlay"></div>
+            <div class="Sub_Menu_Container">
+
+                <div class="Sub_Menu_Container_Title">
+                    <a class="TitleHolder">${content["name"]}</a>
+                </div>
+
+                <div class="Sub_Menu_Container_Content">
+                    <a class="Sub_Menu_Container_Content_Media">Media</a>
+                    <div class="Sub_Menu_Container_Content_Media">
+                        ${pics}
+                    </div>
+                </div>
+
+                <div class="Sub_Menu_Container_Updates">
+
+                    <div class="Sub_Menu_Container_Content_Updates">
+                        <input class="Sub_Menu_Container_Content_Updates_Btns" value="<" type="button"  onclick="ChangeUpdate(true)">
+                        
+                        <div id="Sub_Menu_Container_Content_Update">
+                            <p class="Sub_Menu_Container_Content_Update_Header">Weapon Showcase</p>
+                            <img class="Sub_Menu_Container_Content_Update" src="../Resources/VR-FPS/weapons.jpg" alt="">
+                            <p class="Sub_Menu_Container_Content_Update">${content["text"]}</p>
+                            <input type="button" value="Visit" class="Sub_Menu_Container_Content_Update" onclick="window.open('https://www.youtube.com/watch?v=Yyer2_OreT4&t=2s','_blank')">
+                        </div>
+                        
+                        <input class="Sub_Menu_Container_Content_Updates_Btns" value=">" type="button" onclick="ChangeUpdate(false)">
+                    </div>
+                </div>
+                
+                <p class="Sub_Menu_Container_Content_Description">
+                    Low Poly Virtual Reality open world survival game that I am currently working on.
+                </p>
+
+            </div> 
+        </section>
+    `
+}
+
+
+function GetUpdatesText(content, index, anim){
+    return `
+        <div class="Sub_Menu_Container_Content_Update_ANIM" style="animation: ${anim} .5s ease-in-out;"> 
+            <p class="Sub_Menu_Container_Content_Update_Header">${content["content"][index].name}</p>
+            <img class="Sub_Menu_Container_Content_Update" src="../Resources/${content["content"][index].image}" alt="">
+            <p class="Sub_Menu_Container_Content_Update">${content["content"][index].text}</p>
+            <input type="button" value="Visit" class="Sub_Menu_Container_Content_Update" onclick="window.open('https://www.youtube.com/watch?v=${content["content"][index].video}','_blank')">
+        </div>
+    `
+}

@@ -1,27 +1,21 @@
-let curTheme = 0; 
+let curTheme = 1; 
 
 function ChangeTheme(){
   curTheme = curTheme == 0 ? 1 : 0;
-  
-  if(curTheme == 1){
-    document.body.classList = 'dark';
-  }
-  else{
-    document.body.classList = 'light';
-  }
-    
   localStorage.setItem("theme", curTheme);
+  SetTheme();
 }
 
-
 function LoadTheme(){
-  try{
+  if (localStorage.theme != null) 
     curTheme = localStorage.theme;
-  }
-  catch{
+  else
     curTheme = 1;
-  }
 
+  SetTheme();
+}
+
+function SetTheme(){
   if(curTheme == 1){
     document.body.classList = 'dark';
   }

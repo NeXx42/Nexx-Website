@@ -217,3 +217,285 @@ a.GameHolderHint{
         opacity: 0;
     }
 }
+
+
+
+
+
+
+ 
+
+
+#Sub_Menu{
+    position: absolute;
+
+    height: calc(100vh - 4em);
+    width: 100%;
+
+}
+
+section.Sub_Menu_Section{
+    position: relative;
+
+    height: calc(100vh - 4em);
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+div.Sub_Menu_Container{
+    position: relative;
+
+    width: calc(1920px * .6);
+    height: 100vh;
+
+    top: 6em;
+
+    z-index: 1;
+}
+
+div.Sub_Menu_Container_Title{
+    position: relative;
+
+    height: 5em;
+    width: 44em;
+
+    border-radius: 25px;
+    background-color: var(--headerMain);
+    box-shadow: var(--bodyMainShadow) 5px 5px 15px 0px;
+    
+    display: flex;
+    align-items: center;
+    padding-left: 2em;
+}
+
+
+
+div.Sub_Menu_Container_Content{
+    position: relative;
+
+    height: 51em;
+    width: 24em;
+    left: calc(100% - 24em);
+    bottom: 5em;
+
+    border-radius: 25px;
+    background-color: var(--headerMain);
+    box-shadow: var(--bodyMainShadow) 5px 5px 15px 0px;
+
+    display: block;
+}
+
+
+div.Sub_Menu_Container_Content_Media{
+    position: relative;
+
+    top: 2em;
+    left: calc(100% - 21em);
+
+    width: 19em;
+    height: 85%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+a.Sub_Menu_Container_Content_Media{
+    position: relative;
+    font-size: 35px;
+    left: 1em;
+    top: .75em;
+}
+
+img.Sub_Menu_Container_Content_Media{
+    width: 92%;
+    border-radius: 25px;
+    box-shadow: var(--bodyMainShadow) 5px 5px 15px 0px;
+    margin-top: 1em;
+}
+
+img.Sub_Menu_Container_Content_Media:hover{
+    box-shadow: var(--AccentColour) 5px 5px 15px 0px;
+}
+
+
+
+p.Sub_Menu_Container_Content_Description{
+    position: relative;
+    
+    padding-left: 2.5em;
+    padding-top: 2.5em;
+    
+    height: 15em;
+    width: 43em;
+    bottom: 70.7em;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+    background-color: var(--headerMain);
+    box-shadow: var(--bodyMainShadow) 5px 5px 15px 0px;
+}
+
+
+
+div.Sub_Menu_Container_Updates{
+    position: relative;
+  
+    height: 22em;
+    bottom: 27em;
+    width: 45.5em;
+
+    border-radius: 25px;
+    background-color: var(--headerMain);
+    box-shadow: var(--bodyMainShadow) 5px 5px 15px 0px;
+}
+
+div.Sub_Menu_Container_Content_Updates{
+    position: relative;
+  
+    height: 85%;
+    width: 95%;
+    left: 1em;
+    top: 1.5em;
+
+    justify-items: center;
+    display: flex;
+}
+
+input.Sub_Menu_Container_Content_Updates_Btns{
+    height: 100%;
+    width: 2em;
+    background-color: var(--headerMain2);
+    border-radius: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    text-align: center;
+    text-decoration: none;
+
+    transition: all .05s linear;
+}
+
+input.Sub_Menu_Container_Content_Updates_Btns:hover{
+    box-shadow: var(--AccentColour) 0px 0px 0px 2px;
+    cursor: pointer;
+}
+
+a.Sub_Menu_Container_Content_Updates_Btns{
+    color: white;
+    position: relative;
+    text-align: center;
+
+    display: inline-block;
+    transform: scale(2, 5);
+}
+
+div#Sub_Menu_Container_Content_Update{
+    width: calc(100% - (2 * 2em) - 2em);
+
+    margin-left: 1.5em;
+    margin-right: 1em;
+
+    height: 100%;
+}
+
+div.Sub_Menu_Container_Content_Update_ANIM{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes update_slideRight{
+    0%{
+        opacity: 0;
+        transform: scaleX(0);
+        transform: translateX(10%);
+    }
+
+    100%{
+        transform: scaleX(1); 
+        opacity: 1;
+    }
+}
+
+@keyframes update_slideLeft{
+    0%{
+        opacity: 0;
+        transform: scaleX(0);
+        transform: translateX(-10%);
+    }
+
+    100%{
+        transform: scaleX(1); 
+        opacity: 1;
+    }
+}
+
+img.Sub_Menu_Container_Content_Update{
+    position: relative;
+    left: 19em;
+    bottom: 1em;
+
+    border-radius: 25px;
+    width: 17em;
+
+    box-shadow: var(--bodyMainShadow) 5px 5px 15px 0px;
+}
+
+p.Sub_Menu_Container_Content_Update{
+    position: relative;
+
+    height: 14em;
+    bottom: 17em;
+    width: 14em;
+    padding: 2em;
+
+    font-size: 12px;
+    text-align: left;
+    vertical-align: text-top;
+
+
+    overflow: hidden;
+}
+
+p.Sub_Menu_Container_Content_Update_Header{
+    position: relative;
+    
+    left: .5em;
+    bottom: .5em;
+
+    font-size: 30px;
+
+}
+
+input.Sub_Menu_Container_Content_Update{
+    position: relative;
+
+    bottom: 18em;
+    left: 22.6em;
+
+    height: 2.5em;
+    width: 20em;
+    z-index: 10;
+    
+    background-color: var(--headerMain);
+    color: var(--defaultTextColor);
+
+    border-radius: 25px;    
+	border: 3px solid var(--AccentColour);
+    box-shadow: var(--bodyMainShadow) 0px 0px 25px 0px;
+
+    transition: all .2s linear;
+    cursor: pointer;
+}
+
+input.Sub_Menu_Container_Content_Update:hover{
+    background-color: var(--AccentColour);
+}
