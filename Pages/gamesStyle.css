@@ -34,10 +34,6 @@
 }
 
 
-
-
-
-
 body{
     background: linear-gradient(45deg, var(--bodyMain2) 0%, var(--bodyMain) 100%);
 }
@@ -90,14 +86,17 @@ img.GameHolder{
     position: absolute;
     width: 100%;
     height: 100%;
+    filter: blur(5px)
 }
 
 div.GameHolderOverlay{
     position: absolute;
     width: 100%;
     height: 100%;
+
     background-color: black;
-    opacity: .9;
+    opacity: 0;
+
 }
 
 
@@ -231,7 +230,6 @@ a.GameHolderHint{
 
     height: calc(100vh - 4em);
     width: 100%;
-
 }
 
 section.Sub_Menu_Section{
@@ -247,15 +245,28 @@ section.Sub_Menu_Section{
     overflow: hidden;
 }
 
+@keyframes FadeIn{
+    0%{
+        opacity: 0;
+       
+        transform: translate(50%);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 div.Sub_Menu_Container{
     position: relative;
 
-    width: calc(1920px * .6);
+    min-width: calc(1920px * .6);
     height: 100vh;
 
     top: 6em;
 
     z-index: 1;
+    animation: FadeIn .3s ease-in-out;
 }
 
 div.Sub_Menu_Container_Title{
@@ -379,6 +390,7 @@ input.Sub_Menu_Container_Content_Updates_Btns{
     border: none;
     text-align: center;
     text-decoration: none;
+    color: var(--defaultTextColor);
 
     transition: all .05s linear;
 }
@@ -479,7 +491,7 @@ input.Sub_Menu_Container_Content_Update{
     position: relative;
 
     bottom: 18em;
-    left: 22.6em;
+    left: 22.8em;
 
     height: 2.5em;
     width: 20em;
@@ -498,4 +510,16 @@ input.Sub_Menu_Container_Content_Update{
 
 input.Sub_Menu_Container_Content_Update:hover{
     background-color: var(--AccentColour);
+}
+
+iframe.Sub_Menu_Container_Content_Update{
+    position: relative;
+    left: 19em;
+    bottom: 1em;
+
+    border-radius: 25px;
+    width: 17em;
+    height: 10em;
+
+    box-shadow: var(--bodyMainShadow) 5px 5px 15px 0px;
 }

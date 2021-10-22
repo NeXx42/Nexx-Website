@@ -99,11 +99,33 @@ const PageContent =
     {
         "type":"games", 
         "name":"Polycrawler : Dungeon Crawler",
-        "image":"PolyCrawler_BG.png",
+        "image":"PolyCrawler/PolyCrawler_BG.png",
         "video":"",
-        "background":"PolyCrawler_BG.png",
-        "link":"https://play.google.com/store/apps/details?id=com.Polynexx.PolycrawlerDungeonCrawler",
+        "background":"PolyCrawler/PolyCrawler_BG.png",
+        "link":"",
         "text":"A low poly turn based dungeon crawler, set in a fantasy world where you fight hoards of enemies until you either perish or reach the end.",
+
+        "gallary":
+        [
+            "PolyCrawler/1.png",
+            "PolyCrawler/2.png",
+            "PolyCrawler/3.png",
+            "PolyCrawler/4.png",
+            "PolyCrawler/5.png",
+            "PolyCrawler/6.png",
+            "PolyCrawler/7.png",
+            "PolyCrawler/8.png",
+        ],
+
+        "content":[
+            {
+                "name":"Release",
+                "text":"Avalible on google play-store",
+                "image":"PolyCrawler/PolyCrawler_BG.png",
+                "video":"",
+                "link":"https://play.google.com/store/apps/details?id=com.Polynexx.PolycrawlerDungeonCrawler", 
+            },
+        ]
     },
     {
         "type":"games", 
@@ -116,10 +138,14 @@ const PageContent =
     },
 ];
 
-
+const notificationData = {
+    "text":"New game - polycrawer", 
+    "link":"window.open('https://play.google.com/store/apps/details?id=com.Polynexx.PolycrawlerDungeonCrawler')"
+}
 
 function GetLinks() { return links }; 
 function GetSiteContent() { return PageContent }; 
+function GetNotificationText() { return notificationData };
 
 function GetLinksHTML(element, points, points2){
     return`
@@ -178,7 +204,7 @@ function GetMainHTML(element, link, buttonText){
 function GetSubHTML(content){
     let pics = ""
     content["gallary"].forEach(element => {
-        pics += `<img class="Sub_Menu_Container_Content_Media" src="../Resources/${element}" alt="">`
+        pics += `<img class="Sub_Menu_Container_Content_Media" src="../Resources/${element}" onclick="EnlargeImage('../Resources/${element}')">`
     });
 
 
@@ -226,12 +252,27 @@ function GetSubHTML(content){
 
 
 function GetUpdatesText(content, index, anim){
+    //           
+    let extraText = content["content"][index].video == "" ?   
+    ` 
+        <img class="Sub_Menu_Container_Content_Update" src="../Resources/${content["content"][index].image}" alt="">
+    ` :
+    `
+        <iframe class="Sub_Menu_Container_Content_Update" width="588" height="330" 
+            src="https://www.youtube-nocookie.com/embed/${content["content"][index].video}" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="clipboard-write; encrypted-media; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    `
+
     return `
         <div class="Sub_Menu_Container_Content_Update_ANIM" style="animation: ${anim} .5s ease-in-out;"> 
             <p class="Sub_Menu_Container_Content_Update_Header">${content["content"][index].name}</p>
-            <img class="Sub_Menu_Container_Content_Update" src="../Resources/${content["content"][index].image}" alt="">
+            ${extraText}
             <p class="Sub_Menu_Container_Content_Update">${content["content"][index].text}</p>
-            <input type="button" value="Visit" class="Sub_Menu_Container_Content_Update" onclick="window.open('https://www.youtube.com/watch?v=${content["content"][index].video}','_blank')">
+            <input type="button" value="Visit" class="Sub_Menu_Container_Content_Update" onclick="window.open('${content["content"][index].link}','_blank')">
         </div>
     `
 }

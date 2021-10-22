@@ -44,6 +44,16 @@ function LoadSubPageContent(type, name){
     if(subHTMLHolder)
         subHTMLHolder.innerHTML = "";
 
+    if(localStorage.defaultPage != null && localStorage.defaultPage != ""){
+
+        PageContent.forEach(element => {
+            if(element["name"] == localStorage.defaultPage){
+                name = element["name"]
+            }
+        });
+    }
+    localStorage.defaultPage = "";
+
     if(name == "" || name == null){
         content.forEach(element => {
             if(element["type"] == type){
@@ -91,5 +101,33 @@ function ChangeUpdate(isPrev){
         var holder = document.getElementById("Sub_Menu_Container_Content_Update");
         holder.innerHTML = "";
         holder.innerHTML = GetUpdatesText(currentPageContent, currentIndex, isPrev ? "update_slideLeft" : "update_slideRight");
+
+        Array.prototype.filter.call(document.getElementsByClassName("GameHolder"), function(pic){
+            if(pic.nodeName === 'IMG'){
+                pic.src = "../Resources/" + currentPageContent["content"][currentIndex].image;
+            }
+        });
     }
+}
+
+
+function LoadNotification(){
+    var header = document.getElementById("Topbar_Notification")
+    var style = localStorage.notification == 0 ? "none" : "" 
+
+    Array.prototype.filter.call(document.getElementsByClassName("Topbar_Notification"), function(pic){
+        if(pic.nodeName === 'P'){ 
+            pic.innerHTML = GetNotificationText()["text"];
+            pic.setAttribute('onclick',  `{${GetNotificationText()['link'].toString()}; RemoveNotification()}` );
+            //pic.setAttribute('onclick',  `LoadSubPage("", "Polycrawler : Dungeon Crawler")`);
+            console.log()
+        }
+    });
+
+    header.style.display  = style;
+}
+
+function LoadSubPage(link, contentID){
+    localStorage.defaultPage = contentID
+    window.location.href = link
 }

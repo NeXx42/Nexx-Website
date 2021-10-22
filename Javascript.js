@@ -23,3 +23,17 @@ function SetTheme(){
     document.body.classList = 'light';
   }
 }
+
+function RemoveNotification(){
+  localStorage.notification = 0;
+  LoadNotification();
+}
+
+function CloseEnlargedImage(){
+  document.getElementById("Enlarged_Image_Holder").style.display = "none"
+}
+
+function EnlargeImage(src){
+  document.getElementById("Enlarged_Image").src = src
+  document.getElementById("Enlarged_Image_Holder").style.display = ""
+}

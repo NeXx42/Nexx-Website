@@ -13,8 +13,8 @@
         <link href="StyleSheet.css" rel="StyleSheet" type="text/css">
 
         <script src = "Javascript.js" type = "text/javascript"></script>
-        <script src = "./Resources/ContentLoader.js" type = "text/javascript"></script>
-        <script src = "./Resources/SiteContent.js" type = "text/javascript"></script>
+        <script src = "./Scripts/ContentLoader.js" type = "text/javascript"></script>
+        <script src = "./Scripts/SiteContent.js" type = "text/javascript"></script>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-R3EZ5P6T62"></script>
@@ -22,7 +22,6 @@
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-
             gtag('config', 'G-R3EZ5P6T62');
         </script>
 
@@ -41,6 +40,12 @@
                 
                 <i class="gg-dark-mode"><input class="TopBarItem"  type="button" onclick="ChangeTheme(0)"></i>
             </div>
+            <div id="Topbar_Notification">
+                <div class="Topbar_Notification">
+                    <p class="Topbar_Notification" href="./Pages/projects.html" onclick="">test</p>
+                    <input class="Topbar_Notification" type="button" value="x">
+                </div>
+            </Div>
         </div>
 
         <div Class="MainContainer">
@@ -61,7 +66,6 @@
 
                             <input type="button" value="Visit" class="ProfileLatestText" onclick="window.open('https://youtu.be/szovCEVkpQQ','_blank')">
                         </div>
-
                         <iframe class="ProfileLatest" width="392" height="220" 
                             src="https://www.youtube-nocookie.com/embed/szovCEVkpQQ" 
                             title="YouTube video player" 
@@ -69,6 +73,7 @@
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
+                
                     </div>
                     
                 </div>
@@ -85,12 +90,12 @@
         </div>
 
         <div class="Footer">
-
         </div>
     </body>
 
     <footer>
         <script>
+            LoadNotification();
             GenerateLinks();
             LoadTheme();
         </script>
