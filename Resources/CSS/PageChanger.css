@@ -1,0 +1,48 @@
+div.content-loader{
+    display: none;
+    position: fixed;
+    z-index: 90;
+
+    min-width: 100vw;
+    min-height: 100vw;
+
+    top: -50%;
+    transform: scale(0);
+
+    border-radius: 50%;
+    background-color: #0e1216;
+}
+
+div.content-loader-open{
+    display: block;
+    transform: scale(2);
+
+    animation: anim-open .5s;
+}
+
+@keyframes anim-open {
+    from{
+        transform: scale(0);
+    }
+    to{       
+        transform: scale(2);
+    }
+}
+
+
+
+div.content-loader-close{
+    display: block;
+    transform: scale(0);
+
+    animation: anim-close .5s;
+}
+
+@keyframes anim-close {
+    from{
+        transform: scale(2);
+    }
+    to{       
+        transform: scale(0);
+    }
+}

@@ -1,0 +1,150 @@
+.header-main{
+    position: fixed;
+
+    top : 0;
+    z-index: 100;
+
+    width: 100vw;
+    height: 7em;
+
+    display: flex;
+    flex-wrap: nowrap;
+    flex: 1fr 1fr;
+
+
+    background-color: rgba(1, 1, 1, 0.13);
+
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    box-shadow: 0px 10px 31px -7px rgba(0,0,0,0.58);
+    -webkit-box-shadow: 0px 10px 31px -7px rgba(0,0,0,0.58);
+    -moz-box-shadow: 0px 10px 31px -7px rgba(0,0,0,0.58);
+
+    justify-content: space-between;
+
+    transition: all .25s ease-in-out;
+}
+
+.header-main-active{
+    height: 5em;
+}
+
+
+div.header-main-left{
+    width: auto;
+    height: 100%;
+
+    margin-left: 5em;
+    justify-content: center;
+    align-items: center;
+}
+
+
+img.header-main-left{
+    position: relative;
+    height: 50%;
+
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+    -webkit-box-shadow: 0px 0px 19px -2px #000000; 
+    box-shadow: 0px 0px 19px -2px #000000;
+}
+
+.header-main-left > img{
+    border-radius: 50%;
+
+    transition: all .1s;
+    outline: 0px solid #3578FF;
+
+    cursor: pointer;
+}
+
+.header-main-left > img:hover{
+    outline: 7px solid #3578FF;
+    outline-offset: 3px;
+}
+
+
+
+
+
+
+
+div.header-main-right{
+    width: 15em;
+    height: 100%;
+
+    margin-right: 5em;
+}
+
+
+ul.header-main-right{
+    height: 100%;
+    margin: 0;
+}
+
+
+ul.header-main-right:hover{
+    color: rgb(165, 165, 165);
+}
+
+
+li.header-main-right{
+    margin: auto;
+}
+
+
+li.header-main-right p { 
+    transition: all .1s; 
+    text-transform: uppercase;
+
+    cursor: pointer;
+    margin: 0;
+}
+
+
+
+li.header-main-right p::after{
+    content: "";
+    display: block;
+    position: relative;
+
+    margin-top: 5px;
+
+    height: 2px;
+    background-color: #3578ff;
+
+    transition: all .1s;
+
+    left: 50%;
+    width: 0%;
+}
+
+
+li.header-main-right:hover p{
+    color: white;
+}
+
+li.header-main-right:hover p::after{
+    width: 100%;
+    left: 0;
+}
+
+
+ul.header-main-right{
+    text-decoration: none;
+    list-style-type: none;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+
+    padding: 0;
+}
+
+.header-main-right > p{
+    height: 100%;
+}
