@@ -7,27 +7,27 @@ const socials =
 [
     { 
         url:"https://www.youtube.com/@nexx42",
-        img:"_Links/link_youtube.png",
+        img:"Links/link_youtube.png",
         name:"Youtube",
     },
     { 
         url:"https://play.google.com/store/apps/developer?id=Polynexx",
-        img:"_Links/link_playstore.png",
+        img:"Links/link_playstore.png",
         name:"Playstore",
     },
     { 
         url:"https://twitter.com/nexx42_",
-        img:"_Links/link_twitter.png",
+        img:"Links/link_twitter.png",
         name:"Twitter",
     },
     { 
         url:"https://www.twitch.tv/nexx42_",
-        img:"_Links/link_twitch.png",
+        img:"Links/link_twitch.png",
         name:"Twitch",
     },
     { 
         url:"https://github.com/NeXx42",
-        img:"_Links/link_github.png",
+        img:"Links/link_github.png",
         name:"Github",
     },
 ]
