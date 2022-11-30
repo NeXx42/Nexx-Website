@@ -5,7 +5,8 @@
     z-index: 100;
 
     width: 100vw;
-    height: 7em;
+    height: 5vw;
+    min-height: 3em;
 
     display: flex;
     flex-wrap: nowrap;
@@ -27,7 +28,8 @@
 }
 
 .header-main-active{
-    height: 5em;
+    height: 3vw;
+    min-height: 3em;
 }
 
 
